@@ -237,12 +237,14 @@ if __name__ == '__main__':
     # print(error_6bit.index(max(error_6bit)))
     ERMIN_6bit = min(error_6bit)  # Min Error
     # print(error_6bit.index(min(error_6bit)))
+    MAAE_6bit = max(abs(ERMAX_6bit), abs(ERMIN_6bit))
     ERMAX_6bit_counter = error_6bit.count(max(error_6bit))
     ERMIN_6bit_counter = error_6bit.count(min(error_6bit))
     MSE_6bit = sum([num ** 2 for num in error_6bit]) / (256 * 256)
 
     print('最大误差：', ERMAX_6bit, '最大误差出现次数(MEO)：', ERMAX_6bit_counter)
     print('最小误差：', ERMIN_6bit, '最小误差出现次数(MEO)：', ERMIN_6bit_counter)
+    print('最大绝对误差(MAAE)：', MAAE_6bit)
     print('6bit平均误差(MEE):', Ex_6bit)
     print('6bit平均绝对误差(MEAE):', Ex_6bit_abs_relative)
     print('6bit平均相对误差(MRE):', Ex_6bit_relative)
